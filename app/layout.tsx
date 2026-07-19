@@ -147,7 +147,7 @@ export default function RootLayout({
         </a>
         <div className={`flex min-h-screen flex-col bg-gradient-to-b from-earth-50 via-earth-50 to-earth-100 ${jakartaSans.variable} ${playfairDisplay.variable}`}>
           <SiteHeader />
-          <main id="main-content" className="flex-1">
+          <main id="main-content" className="flex-1 pt-4">
             {children}
           </main>
           <SiteFooter />

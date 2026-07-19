@@ -15,18 +15,40 @@ const navigationLinks = [
 
 /**
  * Primary site navigation.
- * Redesigned as a scroll-aware floating pill for a premium, timeless feel.
+ * Implements premium auto-hide behavior: hides on scroll down, reappears on scroll up.
  */
 export function SiteHeader() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      const diff = currentScrollY - lastScrollY;
+      const threshold = 10;
+
+      // Always show at the very top
+      if (currentScrollY < 10) {
+        setIsVisible(true);
+      }
+      // Scroll Down: Hide
+      else if (diff > threshold) {
+        setIsVisible(false);
+      }
+      // Scroll Up: Show
+      else if (diff < -threshold) {
+        setIsVisible(true);
+      }
+
+      setIsScrolled(currentScrollY > 50);
+      lastScrollY = currentScrollY;
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -39,7 +61,11 @@ export function SiteHeader() {
     "rounded-full px-4 py-2 text-sm transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-earth-800";
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 pointer-events-none transition-all duration-300">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 px-4 pt-4 pointer-events-none transition-transform duration-300 ease-in-out ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="max-w-screen-xl mx-auto pointer-events-auto">
         <div className={`
           flex items-center justify-between gap-6 rounded-full transition-all duration-300 ease-in-out
@@ -130,7 +156,7 @@ export function SiteHeader() {
       {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 z-[-1] flex flex-col bg-earth-50/95 backdrop-blur-lg transition-all duration-300 ease-in-out ${
-          isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
+          isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-s-none"
         }`}
         id="primary-navigation"
       >
