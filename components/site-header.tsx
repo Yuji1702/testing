@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const navigationLinks = [
   { href: "/", label: "Home" },
@@ -15,11 +15,20 @@ const navigationLinks = [
 
 /**
  * Primary site navigation.
- * Redesigned as a floating, frosted-glass pill for a premium, timeless feel.
+ * Redesigned as a scroll-aware floating pill for a premium, timeless feel.
  */
 export function SiteHeader() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -30,9 +39,15 @@ export function SiteHeader() {
     "rounded-full px-4 py-2 text-sm transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-earth-800";
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 pointer-events-none">
+    <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 pointer-events-none transition-all duration-300">
       <div className="max-w-screen-xl mx-auto pointer-events-auto">
-        <div className="flex items-center justify-between gap-6 rounded-full border border-earth-200/60 bg-earth-50/70 p-2 pl-4 backdrop-blur-md shadow-sm">
+        <div className={`
+          flex items-center justify-between gap-6 rounded-full transition-all duration-300 ease-in-out
+          ${isScrolled
+            ? "border-earth-200/60 bg-earth-50/70 p-2 pl-4 backdrop-blur-md shadow-sm"
+            : "border-transparent bg-transparent p-2 pl-4 shadow-none"
+          }
+        `}>
           <div className="flex items-center gap-4">
             <Link href="/" className="flex items-center gap-3 group">
               <Image
