@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 const servicesSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "@id": "https://drzahidasadaf.com/services/#webpage",
-  url: "https://drzahidasadaf.com/services",
+  "@id": "https://testing-five-zeta-93.vercel.app/services/#webpage",
+  url: "https://testing-five-zeta-93.vercel.app/services",
   name: "Holistic Services | Dr. Zahida Sadaf",
   description: "A comprehensive list of Ayurvedic-Unani treatments for chronic wellness.",
-  mainEntity: { "@id": "https://drzahidasadaf.com/#physician" },
+  mainEntity: { "@id": "https://testing-five-zeta-93.vercel.app/#physician" },
 };
 
 const servicesBreadcrumbSchema = {
@@ -29,13 +29,13 @@ const servicesBreadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://drzahidasadaf.com/",
+      item: "https://testing-five-zeta-93.vercel.app/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Services",
-      item: "https://drzahidasadaf.com/services",
+      item: "https://testing-five-zeta-93.vercel.app/services",
     },
   ],
 };

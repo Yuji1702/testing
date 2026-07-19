@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 const aboutSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
-  "@id": "https://drzahidasadaf.com/about/#webpage",
-  url: "https://drzahidasadaf.com/about",
+  "@id": "https://testing-five-zeta-93.vercel.app/about/#webpage",
+  url: "https://testing-five-zeta-93.vercel.app/about",
   name: "About Dr. Zahida Sadaf",
   description: "Detailed biography and healing philosophy of Dr. Zahida Sadaf.",
-  mainEntity: { "@id": "https://drzahidasadaf.com/#physician" },
+  mainEntity: { "@id": "https://testing-five-zeta-93.vercel.app/#physician" },
 };
 
 const aboutBreadcrumbSchema = {
@@ -30,13 +30,13 @@ const aboutBreadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://drzahidasadaf.com/",
+      item: "https://testing-five-zeta-93.vercel.app/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "About",
-      item: "https://drzahidasadaf.com/about",
+      item: "https://testing-five-zeta-93.vercel.app/about",
     },
   ],
 };
