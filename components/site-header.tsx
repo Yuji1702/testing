@@ -169,7 +169,7 @@ export function SiteHeader() {
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
         <div
-          className="fixed inset-0 z-40 flex flex-col bg-earth-50/95 backdrop-blur-lg transition-all duration-300 ease-in-out md:hidden"
+          className="fixed inset-0 z-40 flex flex-col bg-earth-50/95 backdrop-blur-lg pointer-events-auto transition-all duration-300 ease-in-out md:hidden"
           id="primary-navigation"
         >
           <div className="flex h-full flex-col items-center justify-center p-8 text-center">
