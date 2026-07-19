@@ -132,7 +132,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-3">
             <Link
               href="/consultation"
-              className="rounded-full bg-earth-800 px-5 py-2 text-xs font-semibold text-earth-50 shadow-sm transition-all duration-300 hover:bg-earth-700 hover:shadow-md active:scale-95"
+              className="hidden md:inline-flex rounded-full bg-earth-800 px-5 py-2 text-xs font-semibold text-earth-50 shadow-sm transition-all duration-300 hover:bg-earth-700 hover:shadow-md active:scale-95"
             >
               Book Consultation
             </Link>
