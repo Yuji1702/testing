@@ -166,10 +166,10 @@ export function SiteHeader() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 flex flex-col bg-earth-50/95 backdrop-blur-lg transition-all duration-300 ease-in-out ${
+        className={`fixed inset-0 z-[60] flex flex-col bg-earth-50/95 backdrop-blur-lg transition-opacity duration-300 ${
           isMenuOpen
             ? "visible opacity-100 pointer-events-auto"
-            : "-invisible opacity-0 pointer-events-none"
+            : "invisible opacity-0 pointer-events-none"
         }`}
         id="primary-navigation"
       >
