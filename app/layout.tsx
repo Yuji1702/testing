@@ -4,7 +4,18 @@ import type { ReactNode } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
+
+const jakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://drzahidasadaf.com"),
@@ -134,7 +145,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <div className="flex min-h-screen flex-col bg-gradient-to-b from-earth-50 via-earth-50 to-earth-100">
+        <div className={`flex min-h-screen flex-col bg-gradient-to-b from-earth-50 via-earth-50 to-earth-100 ${jakartaSans.variable} ${playfairDisplay.variable}`}>
           <SiteHeader />
           <main id="main-content" className="flex-1">
             {children}
