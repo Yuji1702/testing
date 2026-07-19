@@ -24,10 +24,6 @@ export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    setIsMenuOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
@@ -69,17 +65,18 @@ export function SiteHeader() {
       return;
     }
 
-    setIsVisible(true);
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = "";
     };
   }, [isMenuOpen]);
 
+  const shouldShowHeader = isMenuOpen || isVisible;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 px-4 pt-4 pointer-events-none transition-transform duration-300 ease-in-out ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
+        shouldShowHeader ? "translate-y-0" : "-translate-y-full"
       }`}
     >
       <div className="max-w-screen-xl mx-auto pointer-events-auto">
