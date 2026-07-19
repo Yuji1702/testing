@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F5F3E7;
+  --foreground: #4A5F3E;
+  --accent: #6B8F5D;
+  --accent-soft: #D9E7C5;
+  --highlight: #A9C88E;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-mono: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  
+  /* Earthy color palette */
+  --color-earth-50: #F5F3E7;
+  --color-earth-100: #D9E7C5;
+  --color-earth-200: #C5D9B0;
+  --color-earth-300: #B5CE9E;
+  --color-earth-400: #A9C88E;
+  --color-earth-500: #8FAF73;
+  --color-earth-600: #6B8F5D;
+  --color-earth-700: #5A7A4D;
+  --color-earth-800: #4A5F3E;
+  --color-earth-900: #3A4F2E;
+  --color-earth-950: #2A3F1E;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #4A5F3E;
+    --foreground: #F5F3E7;
+    --accent: #A9C88E;
+    --accent-soft: #6B8F5D;
+    --highlight: #D9E7C5;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #4A5F3E;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+::selection {
+  background: var(--highlight);
+  color: #4A5F3E;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  color: #4A5F3E;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 2px solid rgba(107, 143, 93, 0.3);
+  padding: 0.875rem 1.125rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #2A3F1E;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(74, 95, 62, 0.75);
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+  border-color: rgba(107, 143, 93, 0.5);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #6B8F5D;
+  box-shadow: 0 0 0 3px rgba(107, 143, 93, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+button,
+input[type="submit"],
+input[type="button"] {
+  cursor: pointer;
+}
+
+button:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+section {
+  padding-block: clamp(3rem, 6vw, 4rem);
+}
+
+/* Mobile-first adjustment: tighten vertical rhythm on viewports narrower than 40em (~640px) */
+@media (max-width: 40em) {
+  section {
+    padding-block: 2.75rem;
+  }
+}
+
+/* Fluid content wrapper that centers layouts and provides adaptive gutters */
+.page-shell {
+  width: min(100%, 72rem);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 3rem);
+}
