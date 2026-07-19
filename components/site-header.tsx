@@ -71,11 +71,15 @@ export function SiteHeader() {
     };
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
   const shouldShowHeader = isMenuOpen || isVisible;
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 px-4 pt-4 pointer-events-none transition-transform duration-300 ease-in-out ${
+      className={`fixed top-0 left-0 right-0 z-50 px-4 pt-2 pointer-events-none transition-transform duration-300 ease-in-out ${
         shouldShowHeader ? "translate-y-0" : "-translate-y-full"
       }`}
     >
@@ -167,39 +171,42 @@ export function SiteHeader() {
       </div>
 
       {/* Mobile Menu Overlay */}
-      {isMenuOpen && (
-        <div
-          className="fixed inset-0 z-40 flex flex-col bg-earth-50/95 backdrop-blur-lg transition-all duration-300 ease-in-out md:hidden"
-          id="primary-navigation"
-        >
-          <div className="flex h-full flex-col items-center justify-center p-8 text-center">
-            <nav aria-label="Mobile">
-              <ul className="flex flex-col items-center gap-3 text-2xl font-medium">
-                {navigationLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className={`block rounded-full px-8 py-4 transition-colors ${
-                        isActive(link.href) ? "text-earth-950 font-bold" : "text-earth-700"
-                      }`}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-            <Link
-              href="/consultation"
-              className="mt-8 rounded-full bg-earth-800 px-8 py-4 text-base font-semibold text-earth-50 shadow-lg transition hover:bg-earth-700"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Book Consultation
-            </Link>
-          </div>
+      <div
+        className={`fixed inset-0 z-40 flex flex-col bg-earth-50/95 backdrop-blur-lg transition-all duration-300 ease-in-out md:hidden ${
+          isMenuOpen
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0"
+        }`}
+        id="primary-navigation"
+        aria-hidden={!isMenuOpen}
+      >
+        <div className="flex h-full flex-col items-center justify-center p-8 text-center">
+          <nav aria-label="Mobile">
+            <ul className="flex flex-col items-center gap-3 text-2xl font-medium">
+              {navigationLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={`block rounded-full px-8 py-4 transition-colors ${
+                      isActive(link.href) ? "text-earth-950 font-bold" : "text-earth-700"
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <Link
+            href="/consultation"
+            className="mt-8 rounded-full bg-earth-800 px-8 py-4 text-base font-semibold text-earth-50 shadow-lg transition hover:bg-earth-700"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Book Consultation
+          </Link>
         </div>
-      )}
+      </div>
     </header>
   );
 }
