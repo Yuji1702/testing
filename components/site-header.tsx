@@ -51,6 +51,32 @@ export function SiteHeader() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  useEffect(() => {
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === "Escape") {
+      setIsMenuOpen(false);
+    }
+  };
+
+  window.addEventListener("keydown", handleKeyDown);
+
+  return () => {
+    window.removeEventListener("keydown", handleKeyDown);
+  };
+}, []);
+  useEffect(() => {
+  const handleResize = () => {
+    if (window.innerWidth >= 768) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  window.addEventListener("resize", handleResize);
+
+  return () => {
+    window.removeEventListener("resize", handleResize);
+  };
+}, []);
 
   // Lock body scroll while the mobile menu is open
   useEffect(() => {
@@ -82,7 +108,7 @@ export function SiteHeader() {
         <div className={`
           flex items-center justify-between gap-6 rounded-full transition-all duration-300 ease-in-out
           ${isScrolled
-            ? "border-earth-200/60 bg-earth-50/70 p-2 pl-4 backdrop-blur-md shadow-sm"
+            ? "border-earth-200/60 bg-earth-50/80 p-2 pl-4 backdrop-blur-xl shadow-lg shadow-black/5"
             : "border-transparent bg-transparent p-2 pl-4 shadow-none"
           }
         `}>
@@ -133,7 +159,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-3">
             <Link
               href="/consultation"
-              className="hidden md:inline-flex rounded-full bg-earth-800 px-5 py-2 text-xs font-semibold text-earth-50 shadow-sm transition-all duration-300 hover:bg-earth-700 hover:shadow-md active:scale-95"
+              className="hidden md:inline-flex rounded-full bg-earth-800 px-5 py-2 text-xs font-semibold text-earth-50 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-earth-700 hover:shadow-lg active:scale-95"
             >
               Book Consultation
             </Link>
@@ -168,13 +194,16 @@ export function SiteHeader() {
 
     {/* Mobile Menu Overlay */}
     <div
-      className={`fixed inset-0 z-[100] flex flex-col bg-earth-50/95 backdrop-blur-lg transition-all duration-300 ${
-        isMenuOpen
-          ? "opacity-100 visible pointer-events-auto"
-          : "opacity-0 invisible pointer-events-none"
-      }`}
-      id="primary-navigation"
-    >
+  role="dialog"
+  aria-modal="true"
+  aria-label="Mobile navigation"
+  className={`fixed inset-0 z-[100] flex flex-col bg-earth-50/95 backdrop-blur-lg transition-all duration-300 ${
+    isMenuOpen
+      ? "opacity-100 visible pointer-events-auto"
+      : "opacity-0 invisible pointer-events-none"
+  }`}
+  id="primary-navigation"
+>
       <div className="relative flex min-h-screen flex-col items-center justify-center px-6">
 
         {/* Close Button */}
@@ -219,7 +248,7 @@ export function SiteHeader() {
         <Link
           href="/consultation"
           onClick={() => setIsMenuOpen(false)}
-          className="mt-10 rounded-full bg-earth-800 px-7 py-3 text-sm font-semibold text-earth-50 transition hover:bg-earth-700"
+          className="mt-10 rounded-full bg-earth-800 px-7 py-3 text-sm font-semibold text-earth-50 transition hover:-translate-y-0.5 hover:bg-earth-700 hover:shadow-lg"
         >
           Book Consultation
         </Link>
