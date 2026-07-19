@@ -7,7 +7,7 @@ import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://drzahidasadaf.com"),
+  metadataBase: new URL("https://testing-five-zeta-93.vercel.app"),
   title: {
     default: "Dr. Zahida Sadaf | Ayurvedic-Unani Holistic Healing",
     template: "%s | Dr. Zahida Sadaf Ayurveda",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Dr. Zahida Sadaf | Ayurvedic-Unani Holistic Healing",
     description:
       "Holistic Ayurvedic-Unani physician offering personalized detox, diet therapy, and herbal medicine for chronic lifestyle concerns.",
-    url: "https://drzahidasadaf.com",
+    url: "https://testing-five-zeta-93.vercel.app",
     siteName: "Dr. Zahida Sadaf Ayurveda",
     type: "website",
     images: [
@@ -61,11 +61,11 @@ export const viewport: Viewport = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Physician",
-  "@id": "https://drzahidasadaf.com/#physician",
+  "@id": "https://testing-five-zeta-93.vercel.app/#physician",
   name: "Dr. Zahida Sadaf Ayurveda & Unani Wellness",
   description:
     "Holistic Ayurvedic-Unani consultations for PCOS, hormonal imbalances, thyroid disorders, diabetes, and chronic skin concerns with safe herbal medicines.",
-  url: "https://drzahidasadaf.com",
+  url: "https://testing-five-zeta-93.vercel.app",
   telephone: "+91 76672 65892",
   priceRange: "₹700 - $100 USD",
   sameAs: [
