@@ -119,22 +119,22 @@ export default function HomePage() {
             >
               Meet Dr. Sadaf
             </Link>
-          </div_
+          </div>
           <dl className="mt-16 grid gap-4 sm:grid-cols-3">
             <div className="rounded-2xl bg-earth-100/50 p-5 transition-colors hover:bg-earth-100">
               <dt className="text-xs font-medium uppercase tracking-wider text-earth-700">Initial Consultation</dt>
               <dd className="mt-2 text-xl font-semibold text-earth-950">45–60 minutes</dd>
-            </div_
+            </div>
             <div className="rounded-2xl bg-earth-100/50 p-5 transition-colors hover:bg-earth-100">
               <dt className="text-xs font-medium uppercase tracking-wider text-earth-700">Follow-up Care</dt>
               <dd className="mt-2 text-xl font-semibold text-earth-950">Monthly plans</dd>
-            </div_
+            </div>
             <div className="rounded-2xl bg-earth-100/50 p-5 transition-colors hover:bg-earth-100">
               <dt className="text-xs font-medium uppercase tracking-wider text-earth-700">Global Support</dt>
               <dd className="mt-2 text-xl font-semibold text-earth-950">Consults worldwide</dd>
-            </div_
+            </div>
           </dl>
-        </div_
+        </div>
         <div className="relative flex justify-center lg:justify-end animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
           <div className="absolute -inset-4 -z-10 rounded-full bg-earth-200/30 blur-3xl" />
           <div className="relative p-2 rounded-full border-8 border-white shadow-2xl">
@@ -147,8 +147,8 @@ export default function HomePage() {
               sizes="(min-width: 1024px) 28rem, (min-width: 640px) 22rem, 16rem"
               priority
             />
-          </div_
-        </div_
+          </div>
+        </div>
       </section>
 
       <section aria-labelledby="why-choose-us" className="mt-12">
@@ -172,7 +172,7 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
-        </div_
+        </div>
       </section>
 
       <section aria-labelledby="our-services" className="mt-24">
@@ -185,7 +185,7 @@ export default function HomePage() {
               Personalized care plans include pure Unani formulations, diet therapy, lifestyle
               correction, personal assistance, medical report analysis, and regular follow-up.
             </p>
-          </div_
+          </div>
           <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {services.map((service) => (
               <article
@@ -195,7 +195,7 @@ export default function HomePage() {
                 <div>
                   <h3 className="text-xl font-semibold text-earth-900">{service.title}</h3>
                   <p className="mt-3 text-sm text-earth-700">{service.description}</p>
-                </div_
+                </div>
                 <div className="mt-6">
                   <Link
                     href="/consultation"
@@ -204,11 +204,11 @@ export default function HomePage() {
                   >
                     Book your personalized plan
                   </Link>
-                </div_
+                </div>
               </article>
             ))}
-          </div_
-        </div_
+          </div>
+        </div>
       </section>
 
       <section aria-labelledby="testimonials" className="mt-24">
@@ -220,7 +220,7 @@ export default function HomePage() {
             <p className="mt-3 text-earth-100">
               Real people. Real results. Personalized care that feels like family.
             </p>
-          </div_
+          </div>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {testimonials.map((testimonial) => (
               <figure
@@ -235,9 +235,9 @@ export default function HomePage() {
                 </figcaption>
               </figure>
             ))}
-          </div_
-        </div_
+          </div>
+        </div>
       </section>
-    </div_
+    </div>
   );
 }
