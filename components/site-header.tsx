@@ -173,7 +173,7 @@ export function SiteHeader() {
         }`}
         id="primary-navigation"
       >
-        <div className="flex h-full flex-col items-center justify-center p-6 text-center space-y-4 text-base">
+        <div className="flex h-full w-full flex-col items-center justify-center gap-5 px-6 text-center">
           <nav aria-label="Mobile">
             <ul className="flex flex-col gap-3 text-base font-medium">
               {navigationLinks.map((link) => (
