@@ -175,12 +175,12 @@ export function SiteHeader() {
       >
         <div className="flex flex-col items-center justify-center h-full p-6 text-center space-y-6">
           <nav aria-label="Mobile">
-            <ul className="flex flex-col gap-4 text-lg font-medium">
+            <ul className="flex flex-col gap-3 text-base font-medium">
               {navigationLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className={`block py-1.5 transition-colors ${
+                    className={`block py-1 transition-colors ${
                       isActive(link.href) ? "text-earth-950 font-semibold" : "text-earth-700"
                     }`}
                     onClick={() => setIsMenuOpen(false)}
