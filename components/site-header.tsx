@@ -71,10 +71,6 @@ export function SiteHeader() {
     };
   }, [isMenuOpen]);
 
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [pathname]);
-
   const shouldShowHeader = isMenuOpen || isVisible;
 
   return (
