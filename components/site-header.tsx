@@ -54,15 +54,15 @@ export function SiteHeader() {
 
   // Lock body scroll while the mobile menu is open
   useEffect(() => {
-    if (isMenuOpen) {
-      const previousOverflow = document.body.style.overflow;
-      document.body.style.overflow = "hidden";
-      return () => {
-        document.body.style.overflow = previousOverflow;
-      };
-    }
-  }, [isMenuOpen]);
+  const previousOverflow = document.body.style.overflow;
 
+  document.body.style.overflow = isMenuOpen ? "hidden" : previousOverflow;
+
+  return () => {
+    document.body.style.overflow = previousOverflow;
+  };
+}, [isMenuOpen]);
+  
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
@@ -72,6 +72,7 @@ export function SiteHeader() {
     "rounded-full px-4 py-2 text-sm transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-earth-800";
 
   return (
+  <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 px-4 pt-4 pointer-events-none transition-transform duration-300 ease-in-out ${
         isVisible ? "translate-y-0" : "-translate-y-full"
@@ -162,44 +163,67 @@ export function SiteHeader() {
             </button>
           </div>
         </div>
-      </div>
-
-      {/* Mobile Menu Overlay */}
-      <div
-        className={`fixed inset-0 z-[60] flex flex-col bg-earth-50/95 backdrop-blur-lg transition-opacity duration-300 ${
-          isMenuOpen
-            ? "visible opacity-100 pointer-events-auto"
-            : "invisible opacity-0 pointer-events-none"
-        }`}
-        id="primary-navigation"
-      >
-        <div className="flex h-full w-full flex-col items-center justify-center gap-5 px-6 text-center">
-          <nav aria-label="Mobile">
-            <ul className="flex flex-col gap-3 text-base font-medium">
-              {navigationLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className={`block text-base font-medium py-1 transition-colors ${
-                      isActive(link.href) ? "text-earth-950 font-semibold" : "text-earth-700"
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <Link
-            href="/consultation"
-            className="rounded-full bg-earth-800 px-6 py-2.5 text-sm font-semibold text-earth-50 shadow-sm transition-all duration-300 hover:bg-earth-700 hover:shadow-md active:scale-95"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Book Consultation
-          </Link>
-        </div>
-      </div>
+            </div>
     </header>
-  );
-}
+
+    {/* Mobile Menu Overlay */}
+    <div
+      className={`fixed inset-0 z-[100] flex flex-col bg-earth-50/95 backdrop-blur-lg transition-all duration-300 ${
+        isMenuOpen
+          ? "opacity-100 visible pointer-events-auto"
+          : "opacity-0 invisible pointer-events-none"
+      }`}
+      id="primary-navigation"
+    >
+      <div className="relative flex min-h-screen flex-col items-center justify-center px-6">
+
+        {/* Close Button */}
+        <button
+          type="button"
+          onClick={() => setIsMenuOpen(false)}
+          className="absolute right-6 top-6 inline-flex h-10 w-10 items-center justify-center rounded-full border border-earth-200 bg-white text-earth-800"
+          aria-label="Close navigation"
+        >
+          <svg
+            className="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          >
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <nav aria-label="Mobile">
+          <ul className="flex flex-col items-center gap-5">
+            {navigationLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`text-lg transition-colors ${
+                    isActive(link.href)
+                      ? "font-semibold text-earth-950"
+                      : "text-earth-700 hover:text-earth-950"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <Link
+          href="/consultation"
+          onClick={() => setIsMenuOpen(false)}
+          className="mt-10 rounded-full bg-earth-800 px-7 py-3 text-sm font-semibold text-earth-50 transition hover:bg-earth-700"
+        >
+          Book Consultation
+        </Link>
+      </div>
+    </div>
+  </>
+);
