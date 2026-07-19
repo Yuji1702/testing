@@ -54,12 +54,12 @@ export function SiteHeader() {
 
   // Lock body scroll while the mobile menu is open
   useEffect(() => {
-  const previousOverflow = document.body.style.overflow;
+  const original = document.body.style.overflow;
 
-  document.body.style.overflow = isMenuOpen ? "hidden" : previousOverflow;
+  document.body.style.overflow = isMenuOpen ? "hidden" : "";
 
   return () => {
-    document.body.style.overflow = previousOverflow;
+    document.body.style.overflow = original;
   };
 }, [isMenuOpen]);
   
@@ -197,7 +197,7 @@ export function SiteHeader() {
         </button>
 
         <nav aria-label="Mobile">
-          <ul className="flex flex-col items-center gap-5">
+          <ul className="flex flex-col items-center gap-7">
             {navigationLinks.map((link) => (
               <li key={link.href}>
                 <Link
