@@ -168,8 +168,8 @@ export function SiteHeader() {
       <div
         className={`fixed inset-0 z-40 flex flex-col bg-earth-50/95 backdrop-blur-lg transition-all duration-300 ease-in-out ${
           isMenuOpen
-            ? "translate-y-0 opacity-100 pointer-events-auto"
-            : "-translate-y-full opacity-0 pointer-events-none"
+            ? "visible opacity-100 pointer-events-auto"
+            : "-invisible opacity-0 pointer-events-none"
         }`}
         id="primary-navigation"
       >
