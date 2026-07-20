@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 const contactSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "@id": "https://testing-five-zeta-93.vercel.app/contact/#webpage",
-  url: "https://testing-five-zeta-93.vercel.app/contact",
+  "@id": "https://www.drzahidasadaf.com/contact/#webpage",
+  url: "https://www.drzahidasadaf.com/contact",
   name: "Contact | Dr. Zahida Sadaf",
   description: "Connect with Dr. Zahida Sadaf for appointments and inquiries.",
-  mainEntity: { "@id": "https://testing-five-zeta-93.vercel.app/#physician" },
+  mainEntity: { "@id": "https://www.drzahidasadaf.com/#physician" },
 };
 
 const contactBreadcrumbSchema = {
@@ -29,13 +29,13 @@ const contactBreadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://testing-five-zeta-93.vercel.app/",
+      item: "https://www.drzahidasadaf.com/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Contact",
-      item: "https://testing-five-zeta-93.vercel.app/contact",
+      item: "https://www.drzahidasadaf.com/contact",
     },
   ],
 };

@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 const homeSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": "https://testing-five-zeta-93.vercel.app/#homepage",
-  url: "https://testing-five-zeta-93.vercel.app",
+  "@id": "https://www.drzahidasadaf.com/#homepage",
+  url: "https://www.drzahidasadaf.com",
   name: "Dr. Zahida Sadaf | Home",
   description: "Online Ayurvedic-Unani consultations for holistic root-cause healing.",
-  mainEntity: { "@id": "https://testing-five-zeta-93.vercel.app/#physician" },
+  mainEntity: { "@id": "https://www.drzahidasadaf.com/#physician" },
 };
 
 const principles = [

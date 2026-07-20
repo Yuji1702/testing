@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 const consultationSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "@id": "https://testing-five-zeta-93.vercel.app/consultation/#webpage",
-  url: "https://testing-five-zeta-93.vercel.app/consultation",
+  "@id": "https://www.drzahidasadaf.com/consultation/#webpage",
+  url: "https://www.drzahidasadaf.com/consultation",
   name: "Consultation & Booking | Dr. Zahida Sadaf",
   description: "Step-by-step guide to booking an Ayurvedic-Unani consultation with Dr. Zahida Sadaf.",
-  mainEntity: { "@id": "https://testing-five-zeta-93.vercel.app/#physician" },
+  mainEntity: { "@id": "https://www.drzahidasadaf.com/#physician" },
 };
 
 const consultationBreadcrumbSchema = {
@@ -28,13 +28,13 @@ const consultationBreadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://testing-five-zeta-93.vercel.app/",
+      item: "https://www.drzahidasadaf.com/",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Consultation",
-      item: "https://testing-five-zeta-93.vercel.app/consultation",
+      item: "https://www.drzahidasadaf.com/consultation",
     },
   ],
 };
