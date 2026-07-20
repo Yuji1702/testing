@@ -87,8 +87,8 @@ export default function ServicesPage() {
       </Script>
       <section className="pt-16">
         <div className="max-w-3xl">
-          <h1 className="text-4xl font-bold tracking-tight text-earth-950">Holistic services tailored to you</h1>
-          <p className="mt-6 text-lg text-earth-700">
+          <h1 className="text-4xl font-bold tracking-tight text-heading">Holistic services tailored to you</h1>
+          <p className="mt-6 text-lg text-subtext">
             Each service combines pure Unani formulations, diet therapy, lifestyle correction,
             personal assistance, medical report analysis, and regular follow-up so you feel
             supported every step of the way.
@@ -99,16 +99,16 @@ export default function ServicesPage() {
           {serviceCards.map((card) => (
             <article
               key={card.title}
-              className="flex h-full flex-col justify-between rounded-3xl bg-white/90 p-6 shadow-sm ring-1 ring-earth-100 transition hover:-translate-y-1 hover:shadow-lg"
+              className="flex h-full flex-col justify-between rounded-xl bg-surface/90 p-6 shadow-sm ring-1 ring-border transition hover:-translate-y-1 hover:shadow-lg"
             >
               <div>
-                <h2 className="text-2xl font-semibold text-earth-900">{card.title}</h2>
-                <p className="mt-3 text-sm text-earth-700">{card.description}</p>
+                <h2 className="text-2xl font-semibold text-primary">{card.title}</h2>
+                <p className="mt-3 text-sm text-subtext">{card.description}</p>
               </div>
               <div className="mt-6">
                 <Link
                   href="/consultation"
-                  className="inline-flex items-center text-sm font-semibold text-earth-800 underline-offset-4 hover:underline"
+                  className="inline-flex items-center text-sm font-semibold text-foreground underline-offset-4 transition-colors duration-300 hover:text-accent"
                   aria-label={`Schedule a consultation about ${card.title}`}
                 >
                   Book consultation

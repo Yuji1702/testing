@@ -94,13 +94,13 @@ export default function HomePage() {
       </Script>
       <section className="relative grid gap-12 pt-24 pb-16 lg:grid-cols-[minmax(0,1.1fr),minmax(0,0.9fr)] lg:items-center lg:gap-20">
         <div className="animate-fade-in-up">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-earth-700">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-subtext">
             Your Online Health Consultant
           </p>
-          <h1 className="mt-6 text-5xl font-bold tracking-tight text-earth-950 sm:text-6xl leading-[1.1]">
+          <h1 className="mt-6 text-5xl font-bold tracking-tight text-heading sm:text-6xl leading-[1.15]">
             Holistic Ayurvedic-Unani care that heals the root cause
           </h1>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-earth-800">
+          <p className="mt-8 max-w-xl text-lg leading-relaxed text-foreground">
             Dr. Zahida Sadaf blends classical Unani wisdom with modern gut health
             research to reverse PCOS/PCOD, thyroid issues, diabetes, hormonal
             imbalances, and chronic skin problems. Healing is her service—not a
@@ -109,35 +109,35 @@ export default function HomePage() {
           <div className="mt-10 flex flex-wrap gap-5">
             <Link
               href="/consultation"
-              className="rounded-full bg-earth-800 px-7 py-3.5 text-sm font-semibold text-earth-50 shadow-lg transition-all duration-300 hover:bg-earth-700 hover:shadow-xl active:scale-95"
+              className="rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-background shadow-lg transition-all duration-300 hover:shadow-luxury active:scale-95"
             >
               Book Consultation (Starting at $80)
             </Link>
             <Link
               href="/about"
-              className="rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-earth-800 shadow-sm ring-1 ring-earth-200 transition-all duration-300 hover:bg-earth-50 hover:shadow-md active:scale-95"
+              className="rounded-full bg-surface px-7 py-3.5 text-sm font-semibold text-foreground shadow-sm ring-1 ring-border transition-all duration-300 hover:bg-background hover:shadow-md active:scale-95"
             >
               Meet Dr. Sadaf
             </Link>
           </div>
           <dl className="mt-16 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-2xl bg-earth-100/50 p-5 transition-colors hover:bg-earth-100">
-              <dt className="text-xs font-medium uppercase tracking-wider text-earth-700">Initial Consultation</dt>
-              <dd className="mt-2 text-xl font-semibold text-earth-950">45–60 minutes</dd>
+            <div className="rounded-xl bg-surface p-5 border border-border transition-colors hover:bg-background">
+              <dt className="text-xs font-medium uppercase tracking-wider text-subtext">Initial Consultation</dt>
+              <dd className="mt-2 text-xl font-semibold text-heading">45–60 minutes</dd>
             </div>
-            <div className="rounded-2xl bg-earth-100/50 p-5 transition-colors hover:bg-earth-100">
-              <dt className="text-xs font-medium uppercase tracking-wider text-earth-700">Follow-up Care</dt>
-              <dd className="mt-2 text-xl font-semibold text-earth-950">Monthly plans</dd>
+            <div className="rounded-xl bg-surface p-5 border border-border transition-colors hover:bg-background">
+              <dt className="text-xs font-medium uppercase tracking-wider text-subtext">Follow-up Care</dt>
+              <dd className="mt-2 text-xl font-semibold text-heading">Monthly plans</dd>
             </div>
-            <div className="rounded-2xl bg-earth-100/50 p-5 transition-colors hover:bg-earth-100">
-              <dt className="text-xs font-medium uppercase tracking-wider text-earth-700">Global Support</dt>
-              <dd className="mt-2 text-xl font-semibold text-earth-950">Consults worldwide</dd>
+            <div className="rounded-xl bg-surface p-5 border border-border transition-colors hover:bg-background">
+              <dt className="text-xs font-medium uppercase tracking-wider text-subtext">Global Support</dt>
+              <dd className="mt-2 text-xl font-semibold text-heading">Consults worldwide</dd>
             </div>
           </dl>
         </div>
         <div className="relative flex justify-center lg:justify-end animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-          <div className="absolute -inset-4 -z-10 rounded-full bg-earth-200/30 blur-3xl" />
-          <div className="relative p-2 rounded-full border-8 border-white shadow-2xl">
+          <div className="absolute -inset-4 -z-10 rounded-full bg-surface/50 blur-3xl" />
+          <div className="relative p-2 rounded-full border-8 border-border shadow-2xl">
             <Image
               src="/dr-zahida-sadaf-portrait.jpg"
               alt="Illustration of Dr. Zahida Sadaf offering holistic Ayurvedic-Unani consultation"
@@ -152,11 +152,11 @@ export default function HomePage() {
       </section>
 
       <section aria-labelledby="why-choose-us" className="mt-12">
-        <div className="rounded-3xl bg-white/80 p-8 shadow-sm ring-1 ring-earth-100 sm:p-10">
-          <h2 id="why-choose-us" className="text-3xl font-semibold text-earth-950">
+        <div className="rounded-xl bg-surface p-8 border border-border shadow-sm sm:p-10">
+          <h2 id="why-choose-us" className="text-3xl font-semibold text-heading">
             Why choose Dr. Sadaf?
           </h2>
-          <p className="mt-4 max-w-3xl text-earth-700">
+          <p className="mt-4 max-w-3xl text-foreground">
             Discover holistic regimens that combine organic herbal medicines, diet therapy,
             cupping (Hijama), leech therapy, yoga, meditation, and therapeutic oil baths to
             restore harmony in the body’s systems.
@@ -165,9 +165,9 @@ export default function HomePage() {
             {principles.map((principle) => (
               <li
                 key={principle}
-                className="flex items-start gap-3 rounded-2xl bg-earth-50/70 p-4 text-sm text-earth-900"
+                className="flex items-start gap-3 rounded-xl bg-background p-4 text-sm text-foreground border border-border"
               >
-                <span className="mt-1 inline-flex h-2.5 w-2.5 flex-none rounded-full bg-earth-500" aria-hidden="true" />
+                <span className="mt-1 inline-flex h-2.5 w-2.5 flex-none rounded-full bg-secondary" aria-hidden="true" />
                 <span>{principle}</span>
               </li>
             ))}
@@ -178,10 +178,10 @@ export default function HomePage() {
       <section aria-labelledby="our-services" className="mt-24">
         <div className="flex flex-col gap-8">
           <div className="max-w-3xl">
-            <h2 id="our-services" className="text-3xl font-semibold text-earth-950">
+            <h2 id="our-services" className="text-3xl font-semibold text-heading">
               Our services for chronic wellness
             </h2>
-            <p className="mt-4 text-earth-700">
+            <p className="mt-4 text-foreground">
               Personalized care plans include pure Unani formulations, diet therapy, lifestyle
               correction, personal assistance, medical report analysis, and regular follow-up.
             </p>
@@ -190,16 +190,16 @@ export default function HomePage() {
             {services.map((service) => (
               <article
                 key={service.title}
-                className="flex h-full flex-col justify-between rounded-3xl bg-white/90 p-6 shadow-sm ring-1 ring-earth-100 transition hover:-translate-y-1 hover:shadow-lg"
+                className="flex h-full flex-col justify-between rounded-xl bg-surface p-6 border border-border transition-all duration-300 hover:bg-background hover:shadow-sm"
               >
                 <div>
-                  <h3 className="text-xl font-semibold text-earth-900">{service.title}</h3>
-                  <p className="mt-3 text-sm text-earth-700">{service.description}</p>
+                  <h3 className="text-xl font-semibold text-heading">{service.title}</h3>
+                  <p className="mt-3 text-sm text-foreground leading-relaxed">{service.description}</p>
                 </div>
                 <div className="mt-6">
                   <Link
                     href="/consultation"
-                    className="text-sm font-semibold text-earth-800 underline-offset-4 hover:underline"
+                    className="text-sm font-semibold text-foreground underline-offset-4 transition-colors duration-300 hover:text-accent"
                     aria-label={`Book a consultation to learn more about ${service.title}`}
                   >
                     Book your personalized plan
@@ -212,12 +212,12 @@ export default function HomePage() {
       </section>
 
       <section aria-labelledby="testimonials" className="mt-24">
-        <div className="rounded-3xl bg-earth-800 px-8 py-12 text-earth-50 shadow-lg">
+        <div className="rounded-xl bg-primary px-8 py-12 text-background shadow-lg">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 id="testimonials" className="text-3xl font-semibold text-white">
+            <h2 id="testimonials" className="text-3xl font-semibold text-background">
               Stories of renewed balance
             </h2>
-            <p className="mt-3 text-earth-100">
+            <p className="mt-3 text-subtext">
               Real people. Real results. Personalized care that feels like family.
             </p>
           </div>
@@ -225,12 +225,12 @@ export default function HomePage() {
             {testimonials.map((testimonial) => (
               <figure
                 key={testimonial.author}
-                className="flex h-full flex-col justify-between rounded-3xl bg-earth-700/60 p-6 text-left"
+                className="flex h-full flex-col justify-between rounded-xl bg-white/5 p-6 text-left border border-white/10"
               >
-                <blockquote className="text-sm leading-6 text-earth-50">
+                <blockquote className="text-sm leading-6 text-background">
                   “{testimonial.quote}”
                 </blockquote>
-                <figcaption className="mt-4 text-xs font-semibold uppercase tracking-wide text-earth-200">
+                <figcaption className="mt-4 text-xs font-semibold uppercase tracking-wide text-subtext">
                   {testimonial.author}
                 </figcaption>
               </figure>

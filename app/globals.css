@@ -1,50 +1,80 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F7F6F0;
-  --foreground: #4A5F3E;
-  --accent: #6B8F5D;
-  --accent-soft: #D9E7C5;
-  --highlight: #A9C88E;
-  --premium-accent: #B5A642; /* Muted Gold */
+  /* Rooted Sovereignty Palette */
+  --background: #F9F7F2;    /* Warm Bone */
+  --foreground: #4A4741;    /* Slate Umber */
+  --surface: #F2EFE6;       /* Soft Parchment */
+  --primary: #2C2C2C;       /* Deep Charcoal */
+  --secondary: #A68B6D;     /* Muted Bronze */
+  --accent: #C5A059;        /* Heritage Gold */
+  --muted: #B2BBA8;         /* Dust Sage */
+  --border: #DED9C8;        /* Stone Silk */
+  --heading: #1A1A1A;       /* Obsidian */
+  --subtext: #8C877D;       /* Warm Taupe */
+
+  /* Feedback States */
+  --success: #6B7B62;       /* Moss Green */
+  --warning: #B58B4C;       /* Ochre */
+  --error: #A65D50;        /* Terracotta */
+  --info: #6D7B8D;         /* Storm Blue */
+
+  /* Interaction States */
+  --hover-accent: #D4B37A;   /* Gold Glint */
+  --active-accent: #8C7356;  /* Bronze Depth */
+  --focus-halo: #C5A059;     /* Gold Halo */
+  --disabled: #E2E0D8;       /* Mist */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-jakarta), system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
+  --color-surface: var(--surface);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-heading: var(--heading);
+  --color-subtext: var(--subtext);
+
+  /* Mapping the 'Earth' scale to the new Sovereign palette for backwards compatibility */
+  --color-earth-50: var(--background);
+  --color-earth-100: var(--surface);
+  --color-earth-200: var(--border);
+  --color-earth-300: var(--disabled);
+  --color-earth-400: var(--muted);
+  --color-earth-500: var(--secondary);
+  --color-earth-600: var(--accent);
+  --color-earth-700: var(--subtext);
+  --color-earth-800: var(--foreground);
+  --color-earth-900: var(--primary);
+  --color-earth-950: var(--heading);
+
+  --font-sans: var(--font-jakarta), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-serif: var(--font-playfair), serif;
-  --font-mono: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  --font-mono: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-  /* Refined Earthy color palette */
-  --color-earth-50: #F7F6F0;
-  --color-earth-100: #E8E7D8;
-  --color-earth-200: #D3D1B5;
-  --color-earth-300: #BDBA9C;
-  --color-earth-400: #A9A77D;
-  --color-earth-500: #8A885C;
-  --color-earth-600: #6B8F5D;
-  --color-earth-700: #5A7A4D;
-  --color-earth-800: #4A5F3E;
-  --color-earth-900: #3A4F2E;
-  --color-earth-950: #2A3F1E;
+  --radius-sm: 0.25rem;   /* 4px - Precision */
+  --radius-md: 0.75rem;   /* 12px - Elegant */
+  --radius-lg: 1.5rem;    /* 24px - Organic */
 
-  --radius-sm: 0.375rem;
-  --radius-md: 0.75rem;
-  --radius-lg: 1.5rem;
-
-  --shadow-premium: 0 2px 4px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-premium: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-luxury: 0 0 0 1px rgba(197, 160, 89, 0.2), 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #2A3F1E;
-    --foreground: #F7F6F0;
-    --accent: #A9C88E;
-    --accent-soft: #6B8F5D;
-    --highlight: #D9E7C5;
+    --background: #1C1C1B;   /* Deep Onyx */
+    --foreground: #EBE8E0;   /* Bone White */
+    --surface: #252523;      /* Soft Obsidian */
+    --primary: #EBE8E0;       /* Bone White */
+    --secondary: #A68B6D;    /* Muted Bronze */
+    --accent: #C5A059;       /* Heritage Gold */
+    --muted: #5A5A58;        /* Darkened Sage */
+    --border: #3C3C3B;       /* Dark Stone */
+    --heading: #FFFFFF;      /* Pure White */
+    --subtext: #A09F9A;      /* Muted Grey */
   }
 }
 
@@ -72,172 +102,7 @@ a {
 }
 
 a:hover {
-  color: #4A5F3E;
-}
-
-img,
-video {
-  max-width: 100%;
-  height: auto;
-  border-radius: 0.75rem;
-}
-
-::selection {
-  background: var(--highlight);
-  color: #4A5F3E;
-}
-
-label {
-  display: block;
-  font-weight: 600;
-  color: #4A5F3E;
-  margin-bottom: 0.5rem;
-  font-size: 0.875rem;
-  letter-spacing: 0.01em;
-}
-
-input,
-textarea,
-select {
-  width: 100%;
-  border-radius: var(--radius-sm);
-  border: 2px solid rgba(107, 143, 93, 0.3);
-  padding: 0.875rem 1.125rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  background-color: rgba(255, 255, 255, 0.95);
-  color: #2A3F1E;
-  transition: all 0.2s ease;
-  box-shadow: var(--shadow-premium);
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: rgba(74, 95, 62, 0.75);
-}
-
-input:hover,
-textarea:hover,
-select:hover {
-  border-color: rgba(107, 143, 93, 0.5);
-  background-color: rgba(255, 255, 255, 1);
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
-  border-color: #6B8F5D;
-  box-shadow: 0 0 0 3px rgba(107, 143, 93, 0.1), var(--shadow-premium);
-  background-color: rgba(255, 255, 255, 1);
-}
-
-button,
-input[type="submit"],
-input[type="button"] {
-  cursor: pointer;
-  transition: transform 0.1s ease, box-shadow 0.2s ease;
-}
-
-button:active,
-input[type="submit"]:active,
-input[type="button"]:active {
-  transform: scale(0.97);
-}
-
-button:disabled,
-input:disabled,
-textarea:disabled,
-select:disabled {
-  cursor: not-allowed;
-  opacity: 0.7;
-}
-
-section {
-  padding-block: clamp(3rem, 6vw, 4rem);
-}
-
-@media (max-width: 40em) {
-  section {
-    padding-block: 2.75rem;
-  }
-}
-
-@import "tailwindcss";
-
-:root {
-  --background: #F7F6F0;
-  --foreground: #4A5F3E;
-  --accent: #6B8F5D;
-  --accent-soft: #D9E7C5;
-  --highlight: #A9C88E;
-  --premium-accent: #B5A642; /* Muted Gold */
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-jakarta), system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-  --font-serif: var(--font-playfair), serif;
-  --font-mono: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
-
-  /* Refined Earthy color palette */
-  --color-earth-50: #F7F6F0;
-  --color-earth-100: #E8E7D8;
-  --color-earth-200: #D3D1B5;
-  --color-earth-300: #BDBA9C;
-  --color-earth-400: #A9A77D;
-  --color-earth-500: #8A885C;
-  --color-earth-600: #6B8F5D;
-  --color-earth-700: #5A7A4D;
-  --color-earth-800: #4A5F3E;
-  --color-earth-900: #3A4F2E;
-  --color-earth-950: #2A3F1E;
-
-  --radius-sm: 0.375rem;
-  --radius-md: 0.75rem;
-  --radius-lg: 1.5rem;
-
-  --shadow-premium: 0 2px 4px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #2A3F1E;
-    --foreground: #F7F6F0;
-    --accent: #A9C88E;
-    --accent-soft: #6B8F5D;
-    --highlight: #D9E7C5;
-  }
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
-  line-height: 1.6;
-}
-
-h1, h2 {
-  font-family: var(--font-serif);
-  font-weight: 700;
-}
-
-a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-a:hover {
-  color: #4A5F3E;
 }
 
 img,
@@ -248,14 +113,14 @@ video {
 }
 
 ::selection {
-  background: var(--highlight);
-  color: #4A5F3E;
+  background: var(--accent);
+  color: var(--primary);
 }
 
 label {
   display: block;
   font-weight: 600;
-  color: #4A5F3E;
+  color: var(--foreground);
   margin-bottom: 0.5rem;
   font-size: 0.875rem;
   letter-spacing: 0.01em;

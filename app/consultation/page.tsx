@@ -92,8 +92,8 @@ export default function ConsultationPage() {
       </Script>
       <section className="pt-16">
         <div className="max-w-3xl">
-          <h1 className="text-4xl font-bold tracking-tight text-earth-950">Begin your consultation</h1>
-          <p className="mt-6 text-lg text-earth-700">
+          <h1 className="text-4xl font-bold tracking-tight text-heading">Begin your consultation</h1>
+          <p className="mt-6 text-lg text-subtext">
             Consultations start at $80 and are valid for 15 days, giving you time to integrate
             your personalized plan. Dr. Zahida Sadaf believes healing is a sacred service, so
             every step is transparent, compassionate, and designed around your lifestyle.
@@ -101,12 +101,12 @@ export default function ConsultationPage() {
         </div>
       </section>
 
-      <section className="mt-12 rounded-3xl bg-white/90 p-8 shadow-sm ring-1 ring-earth-100 sm:p-10" aria-labelledby="process">
+      <section className="mt-12 rounded-xl bg-surface/90 p-8 shadow-sm ring-1 ring-border sm:p-10" aria-labelledby="process">
         <div className="max-w-3xl">
-          <h2 id="process" className="text-3xl font-semibold text-earth-950">
+          <h2 id="process" className="text-3xl font-semibold text-heading">
             Step-by-step booking process
           </h2>
-          <p className="mt-4 text-earth-700">
+          <p className="mt-4 text-subtext">
             From first message to ongoing mentorship, here’s how we co-create your healing plan.
           </p>
         </div>
@@ -115,29 +115,29 @@ export default function ConsultationPage() {
           {steps.map((step, index) => (
             <li
               key={step.title}
-              className="flex flex-col gap-3 rounded-3xl bg-earth-50/80 p-6"
+              className="flex flex-col gap-3 rounded-xl bg-background/80 p-6"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-earth-800 text-sm font-semibold text-white">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-semibold text-background">
                 {index + 1}
               </span>
-              <h3 className="text-lg font-semibold text-earth-900">{step.title}</h3>
-              <p className="text-sm text-earth-700">{step.description}</p>
+              <h3 className="text-lg font-semibold text-primary">{step.title}</h3>
+              <p className="text-sm text-subtext">{step.description}</p>
             </li>
           ))}
         </ol>
       </section>
 
       <section className="mt-12">
-        <div className="max-w-3xl rounded-3xl bg-white/90 p-8 shadow-sm ring-1 ring-earth-100 sm:p-10">
-          <h2 className="text-3xl font-semibold text-earth-950">Consultation investment</h2>
-          <p className="mt-4 text-earth-700">
+        <div className="max-w-3xl rounded-xl bg-surface/90 p-8 shadow-sm ring-1 ring-border sm:p-10">
+          <h2 className="text-3xl font-semibold text-heading">Consultation investment</h2>
+          <p className="mt-4 text-subtext">
             Choose the currency that matches your location. Membership bundles with additional
             follow-ups and herbal refills are available on request.
           </p>
-          <div className="mt-6 overflow-hidden rounded-2xl border border-earth-100">
+          <div className="mt-6 overflow-hidden rounded-xl border border-border">
             <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-earth-100 text-sm">
-                <thead className="bg-earth-800 text-left text-xs font-semibold uppercase tracking-wide text-earth-50">
+              <table className="min-w-full divide-y divide-border text-sm">
+                <thead className="bg-primary text-left text-xs font-semibold uppercase tracking-wide text-background">
                   <tr>
                     <th scope="col" className="px-4 py-3">
                       Region
@@ -147,25 +147,25 @@ export default function ConsultationPage() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-earth-100 bg-white/60">
+                <tbody className="divide-y divide-border bg-surface/60">
                   {pricing.map((price) => (
                     <tr key={price.region}>
-                      <td className="px-4 py-3 font-medium text-earth-900">{price.region}</td>
-                      <td className="px-4 py-3 text-earth-800">{price.amount}</td>
+                      <td className="px-4 py-3 font-medium text-primary">{price.region}</td>
+                      <td className="px-4 py-3 text-foreground">{price.amount}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
           </div>
-          <div className="mt-6 space-y-3 text-sm text-earth-700">
+          <div className="mt-6 space-y-3 text-sm text-subtext">
             <p>
               After payment, share the receipt on WhatsApp for scheduling. Secure online payment
               integrations are coming soon—meanwhile, bank transfer and UPI details will be
               provided via chat.
             </p>
             <p>
-              <strong className="font-semibold text-earth-900">WhatsApp support:</strong>{" "}
+              <strong className="font-semibold text-primary">WhatsApp support:</strong>{" "}
               <a className="underline" href="https://wa.me/917667265892" target="_blank" rel="noreferrer">
                 https://wa.me/917667265892
               </a>

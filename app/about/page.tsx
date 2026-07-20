@@ -55,23 +55,23 @@ export default function AboutPage() {
       </Script>
       <section className="grid gap-12 pt-16 lg:grid-cols-[minmax(0,1.05fr),minmax(0,0.95fr)] lg:items-center lg:gap-16">
         <div className="space-y-6">
-          <h1 className="text-4xl font-bold tracking-tight text-earth-950">
+          <h1 className="text-4xl font-bold tracking-tight text-heading">
             Meet Dr. Zahida Sadaf
           </h1>
-          <p className="text-lg text-earth-700">
+          <p className="text-lg text-subtext">
             As a qualified Ayurvedic-Unani physician, Dr. Sadaf bridges 2,500 years of
             timeless medical wisdom with modern insights into gut health, immunity, and
             hormonal resilience. She has guided thousands of families through chronic
             conditions by addressing the root causes hidden within digestion, stress,
             and lifestyle patterns.
           </p>
-          <p className="text-lg text-earth-700">
+          <p className="text-lg text-subtext">
             Her treatment plans combine pure organic herbal medicines, Hijama (cupping),
             leech therapy, therapeutic oil baths, mindful movement, and soul-nourishing
             meditation. Every plan is personalized, side-effect-free, and supported by
             consistent follow-ups to ensure complete healing.
           </p>
-          <p className="text-lg text-earth-700">
+          <p className="text-lg text-subtext">
             Initial consultations last 45–60 minutes, followed by monthly guidance and a
             one-month follow-up to refine your regimen. Whether you are navigating PCOS,
             thyroid imbalances, diabetes, skin disorders, or chronic fatigue, Dr. Sadaf
@@ -80,20 +80,20 @@ export default function AboutPage() {
           <div className="flex flex-wrap gap-4">
             <Link
               href="/consultation"
-              className="rounded-full bg-earth-800 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-earth-700 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-earth-700 active:scale-[0.98]"
+              className="rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-background shadow-lg transition-all duration-300 hover:shadow-luxury active:scale-95"
             >
               Book a Consultation
             </Link>
             <Link
               href="/services"
-              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-earth-800 shadow-sm ring-1 ring-earth-100 transition hover:bg-earth-50 hover:shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-earth-700 active:scale-[0.98]"
+              className="rounded-full bg-surface px-7 py-3.5 text-sm font-semibold text-foreground shadow-sm ring-1 ring-border transition-all duration-300 hover:bg-background hover:shadow-md active:scale-95"
             >
               Explore Services
             </Link>
           </div>
         </div>
         <div className="relative flex justify-center lg:justify-end">
-          <div className="absolute inset-0 -z-10 rounded-full bg-earth-100 blur-3xl" />
+          <div className="absolute inset-0 -z-10 rounded-full bg-surface blur-3xl" />
           <Image
             src="/dr-zahida-sadaf-portrait.jpg"
             alt="Portrait illustration of Dr. Zahida Sadaf smiling confidently"
@@ -106,34 +106,34 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mt-12 rounded-3xl bg-white/90 p-8 shadow-sm ring-1 ring-earth-100 sm:p-10">
-        <h2 className="text-3xl font-semibold text-earth-950">Whole-person healing philosophy</h2>
+      <section className="mt-12 rounded-xl bg-surface/90 p-8 shadow-sm ring-1 ring-border sm:p-10">
+        <h2 className="text-3xl font-semibold text-heading">Whole-person healing philosophy</h2>
         {/* Medium screens (md) split the cards in two columns while mobile stays stacked */}
         <div className="mt-6 grid gap-6 md:grid-cols-2">
-          <article className="rounded-2xl bg-earth-50/80 p-6">
-            <h3 className="text-xl font-semibold text-earth-900">Holistic Mind–Body–Soul Care</h3>
-            <p className="mt-3 text-sm text-earth-700">
+          <article className="rounded-xl bg-background/80 p-6">
+            <h3 className="text-xl font-semibold text-primary">Holistic Mind–Body–Soul Care</h3>
+            <p className="mt-3 text-sm text-subtext">
               Lifestyle correction, mindful routines, and emotional resilience practices ensure
               the mind and spirit heal alongside the body.
             </p>
           </article>
-          <article className="rounded-2xl bg-earth-50/80 p-6">
-            <h3 className="text-xl font-semibold text-earth-900">Evidence-Informed Tradition</h3>
-            <p className="mt-3 text-sm text-earth-700">
+          <article className="rounded-xl bg-background/80 p-6">
+            <h3 className="text-xl font-semibold text-primary">Evidence-Informed Tradition</h3>
+            <p className="mt-3 text-sm text-subtext">
               Classical Unani texts, contemporary lab reports, and functional markers guide
               every personalized regimen.
             </p>
           </article>
-          <article className="rounded-2xl bg-earth-50/80 p-6">
-            <h3 className="text-xl font-semibold text-earth-900">Compassionate Partnership</h3>
-            <p className="mt-3 text-sm text-earth-700">
+          <article className="rounded-xl bg-background/80 p-6">
+            <h3 className="text-xl font-semibold text-primary">Compassionate Partnership</h3>
+            <p className="mt-3 text-sm text-subtext">
               Dr. Sadaf builds trust through clear explanations, global availability, and the
               belief that healing is a service rooted in sincerity.
             </p>
           </article>
-          <article className="rounded-2xl bg-earth-50/80 p-6">
-            <h3 className="text-xl font-semibold text-earth-900">Global Consultations</h3>
-            <p className="mt-3 text-sm text-earth-700">
+          <article className="rounded-xl bg-background/80 p-6">
+            <h3 className="text-xl font-semibold text-primary">Global Consultations</h3>
+            <p className="mt-3 text-sm text-subtext">
               Clients join from India, Canada, the United States, the United Kingdom, and
               Australia through secure phone or video sessions.
             </p>
