@@ -92,21 +92,21 @@ export default function HomePage() {
       <Script id="home-schema" type="application/ld+json">
         {JSON.stringify(homeSchema)}
       </Script>
-      <section className="relative grid gap-12 pt-24 pb-16 lg:grid-cols-[minmax(0,1.1fr),minmax(0,0.9fr)] lg:items-center lg:gap-20">
+      <section className="relative grid gap-8 pt-16 pb-12 sm:gap-10 sm:pt-20 sm:pb-16 lg:grid-cols-[minmax(0,1.1fr),minmax(0,0.9fr)] lg:items-center lg:gap-20">
         <div className="animate-fade-in-up">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-subtext">
             Your Online Health Consultant
           </p>
-          <h1 className="mt-6 text-5xl font-bold tracking-tight text-heading sm:text-6xl leading-[1.15]">
+          <h1 className="mt-4 text-4xl font-bold tracking-tight text-earth-950 leading-[1.1] sm:mt-6 sm:text-5xl lg:text-6xl">
             Holistic Ayurvedic-Unani care that heals the root cause
           </h1>
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-foreground">
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-earth-800 sm:mt-8 sm:text-lg">
             Dr. Zahida Sadaf blends classical Unani wisdom with modern gut health
             research to reverse PCOS/PCOD, thyroid issues, diabetes, hormonal
             imbalances, and chronic skin problems. Healing is her service—not a
             business—and every consultation begins with deep listening.
           </p>
-          <div className="mt-10 flex flex-wrap gap-5">
+          <div className="mt-8 flex flex-wrap gap-4 sm:mt-10 sm:gap-5">
             <Link
               href="/consultation"
               className="rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-background shadow-lg transition-all duration-300 hover:shadow-luxury active:scale-95"
@@ -120,10 +120,10 @@ export default function HomePage() {
               Meet Dr. Sadaf
             </Link>
           </div>
-          <dl className="mt-16 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-xl bg-surface p-5 border border-border transition-colors hover:bg-background">
-              <dt className="text-xs font-medium uppercase tracking-wider text-subtext">Initial Consultation</dt>
-              <dd className="mt-2 text-xl font-semibold text-heading">45–60 minutes</dd>
+          <dl className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-3">
+            <div className="rounded-2xl bg-earth-100/50 p-5 transition-colors hover:bg-earth-100">
+              <dt className="text-xs font-medium uppercase tracking-wider text-earth-700">Initial Consultation</dt>
+              <dd className="mt-2 text-xl font-semibold text-earth-950">45–60 minutes</dd>
             </div>
             <div className="rounded-xl bg-surface p-5 border border-border transition-colors hover:bg-background">
               <dt className="text-xs font-medium uppercase tracking-wider text-subtext">Follow-up Care</dt>
@@ -135,9 +135,9 @@ export default function HomePage() {
             </div>
           </dl>
         </div>
-        <div className="relative flex justify-center lg:justify-end animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-          <div className="absolute -inset-4 -z-10 rounded-full bg-surface/50 blur-3xl" />
-          <div className="relative p-2 rounded-full border-8 border-border shadow-2xl">
+        <div className="relative mt-6 flex justify-center animate-fade-in-up sm:mt-8 lg:mt-0 lg:justify-end" style={{ animationDelay: "0.2s" }}>
+          <div className="absolute -inset-4 -z-10 rounded-full bg-earth-200/30 blur-3xl" />
+          <div className="relative p-2 rounded-full border-8 border-white shadow-2xl">
             <Image
               src="/dr-zahida-sadaf-portrait.jpg"
               alt="Illustration of Dr. Zahida Sadaf offering holistic Ayurvedic-Unani consultation"

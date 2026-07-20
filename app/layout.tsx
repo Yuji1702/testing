@@ -67,6 +67,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor:"#F7F2EB",
 };
 
 const organizationSchema = {
@@ -134,8 +135,10 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-background font-sans text-primary antialiased">
+    <html lang="en" suppressHydrationWarning>
+      <body
+  className={`${jakartaSans.variable} ${playfairDisplay.variable} min-h-screen bg-earth-50 font-sans text-earth-900 antialiased`}
+>
         <Script id="organization-schema" type="application/ld+json">
           {JSON.stringify(organizationSchema)}
         </Script>
@@ -145,9 +148,9 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <div className={`flex min-h-screen flex-col bg-gradient-to-b from-background via-background to-surface ${jakartaSans.variable} ${playfairDisplay.variable}`}>
+        <div className={`flex min-h-screen flex-col bg-gradient-to-b from-earth-50 via-earth-50 to-earth-100`}>
           <SiteHeader />
-          <main id="main-content" className="flex-1 pt-4">
+          <main id="main-content" className="flex-1 pt-24 md:pt-28">
             {children}
           </main>
           <SiteFooter />

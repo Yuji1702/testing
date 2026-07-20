@@ -65,16 +65,12 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1C1C1B;   /* Deep Onyx */
-    --foreground: #EBE8E0;   /* Bone White */
-    --surface: #252523;      /* Soft Obsidian */
-    --primary: #EBE8E0;       /* Bone White */
-    --secondary: #A68B6D;    /* Muted Bronze */
-    --accent: #C5A059;       /* Heritage Gold */
-    --muted: #5A5A58;        /* Darkened Sage */
-    --border: #3C3C3B;       /* Dark Stone */
-    --heading: #FFFFFF;      /* Pure White */
-    --subtext: #A09F9A;      /* Muted Grey */
+    --background: #2A3F1E;
+    --foreground: #F7F6F0;
+    --accent: #A9C88E;
+    --accent-soft: #6B8F5D;
+    --highlight: #D9E7C5;
+    --premium-accent: #D4C15A;
   }
 }
 
@@ -89,6 +85,11 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   line-height: 1.6;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 h1, h2 {
@@ -102,11 +103,12 @@ a {
 }
 
 a:hover {
-  color: var(--foreground);
+  color: #4A5F3E;
 }
 
 img,
 video {
+  display: block;
   max-width: 100%;
   height: auto;
   border-radius: 0.75rem;
@@ -220,4 +222,25 @@ section {
     opacity: 1;
     transform: none;
   }
+}
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/*Scrollbar*/
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E8E7D8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A9A77D;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6B8F5D;
 }
