@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
+import { SCHEMA_IDS } from "@/lib/schema-ids";
 import "./globals.css";
 
 const jakartaSans = Plus_Jakarta_Sans({
@@ -69,56 +70,67 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const organizationSchema = {
+const globalSchemaGraph = {
   "@context": "https://schema.org",
-  "@type": "Physician",
-  "@id": "https://www.drzahidasadaf.com/#physician",
-  name: "Dr. Zahida Sadaf Ayurveda & Unani Wellness",
-  description:
-    "Holistic Ayurvedic-Unani consultations for PCOS, hormonal imbalances, thyroid disorders, diabetes, and chronic skin concerns with safe herbal medicines.",
-  url: "https://www.drzahidasadaf.com",
-  telephone: "+91 76672 65892",
-  priceRange: "₹700 - $100 USD",
-  sameAs: [
-    "https://wa.me/917667265892",
-    "https://www.instagram.com/drzahidasadaf/?utm_source=website",
-    "https://www.facebook.com/zahida.sadaf.31?utm_source=website",
-    "https://www.youtube.com/@dr.zahidasadaf4498?utm_source=website",
-  ],
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Hyderabad",
-    addressRegion: "Telangana",
-    addressCountry: "IN",
-  },
-  areaServed: [
-    { "@type": "Country", name: "India" },
-    { "@type": "Country", name: "Canada" },
-    { "@type": "Country", name: "United States" },
-    { "@type": "Country", name: "United Kingdom" },
-    { "@type": "Country", name: "Australia" },
-  ],
-  availableService: [
-    { "@type": "MedicalTherapy", name: "PCOS / PCOD natural treatment" },
-    { "@type": "MedicalTherapy", name: "Thyroid hormone balancing" },
-    { "@type": "MedicalTherapy", name: "Diabetes metabolic reset" },
-    { "@type": "MedicalTherapy", name: "Skin health revitalization" },
-    { "@type": "MedicalTherapy", name: "Hijama cupping" },
-    { "@type": "MedicalTherapy", name: "Leech therapy" },
-  ],
-  openingHoursSpecification: [
+  "@graph": [
     {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
+      "@type": "WebSite",
+      "@id": SCHEMA_IDS.WEBSITE,
+      url: "https://www.drzahidasadaf.com",
+      name: "Dr. Zahida Sadaf Ayurveda & Unani Wellness",
+      publisher: { "@id": SCHEMA_IDS.PHYSICIAN },
+    },
+    {
+      "@type": "Physician",
+      "@id": SCHEMA_IDS.PHYSICIAN,
+      name: "Dr. Zahida Sadaf",
+      alternateName: "Dr. Zahida Sadaf Ayurveda & Unani Wellness",
+      description:
+        "Holistic Ayurvedic-Unani consultations for PCOS, hormonal imbalances, thyroid disorders, diabetes, and chronic skin concerns with safe herbal medicines.",
+      url: "https://www.drzahidasadaf.com",
+      telephone: "+91 76672 65892",
+      sameAs: [
+        "https://wa.me/917667265892",
+        "https://www.instagram.com/drzahidasadaf/?utm_source=website",
+        "https://www.facebook.com/zahida.sadaf.31?utm_source=website",
+        "https://www.youtube.com/@dr.zahidasadaf4498?utm_source=website",
       ],
-      opens: "09:00",
-      closes: "19:00",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Hyderabad",
+        addressRegion: "Telangana",
+        addressCountry: "IN",
+      },
+      areaServed: [
+        { "@type": "Country", name: "India" },
+        { "@type": "Country", name: "Canada" },
+        { "@type": "Country", name: "United States" },
+        { "@type": "Country", name: "United Kingdom" },
+        { "@type": "Country", name: "Australia" },
+      ],
+      availableService: [
+        { "@type": "MedicalTherapy", name: "PCOS / PCOD natural treatment" },
+        { "@type": "MedicalTherapy", name: "Thyroid hormone balancing" },
+        { "@type": "MedicalTherapy", name: "Diabetes metabolic reset" },
+        { "@type": "MedicalTherapy", name: "Skin health revitalization" },
+        { "@type": "MedicalTherapy", name: "Hijama cupping" },
+        { "@type": "MedicalTherapy", name: "Leech therapy" },
+      ],
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+          ],
+          opens: "09:00",
+          closes: "19:00",
+        },
+      ],
     },
   ],
 };
@@ -136,8 +148,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-background font-sans text-primary antialiased">
-        <Script id="organization-schema" type="application/ld+json">
-          {JSON.stringify(organizationSchema)}
+        <Script id="global-schema-graph" type="application/ld+json">
+          {JSON.stringify(globalSchemaGraph)}
         </Script>
         <a
           href="#main-content"
