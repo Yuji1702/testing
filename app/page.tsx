@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import type { Metadata } from "next";
+import { SCHEMA_IDS } from "@/lib/schema-ids";
 
 export const metadata: Metadata = {
   title: "Your Online Health Consultant for Holistic Healing",
@@ -15,11 +16,12 @@ export const metadata: Metadata = {
 const homeSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": "https://www.drzahidasadaf.com/#homepage",
+  "@id": SCHEMA_IDS.HOMEPAGE,
   url: "https://www.drzahidasadaf.com",
   name: "Dr. Zahida Sadaf | Home",
   description: "Online Ayurvedic-Unani consultations for holistic root-cause healing.",
-  mainEntity: { "@id": "https://www.drzahidasadaf.com/#physician" },
+  isPartOf: { "@id": SCHEMA_IDS.WEBSITE },
+  mainEntity: { "@id": SCHEMA_IDS.PHYSICIAN },
 };
 
 const principles = [

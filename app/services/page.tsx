@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Script from "next/script";
 import type { Metadata } from "next";
+import { SCHEMA_IDS } from "@/lib/schema-ids";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -18,7 +19,8 @@ const servicesSchema = {
   url: "https://www.drzahidasadaf.com/services",
   name: "Holistic Services | Dr. Zahida Sadaf",
   description: "A comprehensive list of Ayurvedic-Unani treatments for chronic wellness.",
-  mainEntity: { "@id": "https://www.drzahidasadaf.com/#physician" },
+  isPartOf: { "@id": SCHEMA_IDS.WEBSITE },
+  mainEntity: { "@id": SCHEMA_IDS.PHYSICIAN },
 };
 
 const servicesBreadcrumbSchema = {

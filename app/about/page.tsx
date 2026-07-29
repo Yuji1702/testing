@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import type { Metadata } from "next";
+import { SCHEMA_IDS } from "@/lib/schema-ids";
 
 export const metadata: Metadata = {
   title: "About Dr. Zahida Sadaf",
@@ -19,7 +20,8 @@ const aboutSchema = {
   url: "https://www.drzahidasadaf.com/about",
   name: "About Dr. Zahida Sadaf",
   description: "Detailed biography and healing philosophy of Dr. Zahida Sadaf.",
-  mainEntity: { "@id": "https://www.drzahidasadaf.com/#physician" },
+  isPartOf: { "@id": SCHEMA_IDS.WEBSITE },
+  mainEntity: { "@id": SCHEMA_IDS.PHYSICIAN },
 };
 
 const aboutBreadcrumbSchema = {

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Script from "next/script";
 import type { Metadata } from "next";
+import { SCHEMA_IDS } from "@/lib/schema-ids";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -18,7 +19,8 @@ const contactSchema = {
   url: "https://www.drzahidasadaf.com/contact",
   name: "Contact | Dr. Zahida Sadaf",
   description: "Connect with Dr. Zahida Sadaf for appointments and inquiries.",
-  mainEntity: { "@id": "https://www.drzahidasadaf.com/#physician" },
+  isPartOf: { "@id": SCHEMA_IDS.WEBSITE },
+  mainEntity: { "@id": SCHEMA_IDS.PHYSICIAN },
 };
 
 const contactBreadcrumbSchema = {
