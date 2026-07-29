@@ -12,36 +12,6 @@ export const metadata: Metadata = {
   },
 };
 
-const servicesSchema = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "@id": "https://www.drzahidasadaf.com/services/#webpage",
-  url: "https://www.drzahidasadaf.com/services",
-  name: "Holistic Services | Dr. Zahida Sadaf",
-  description: "A comprehensive list of Ayurvedic-Unani treatments for chronic wellness.",
-  isPartOf: { "@id": SCHEMA_IDS.WEBSITE },
-  mainEntity: { "@id": SCHEMA_IDS.PHYSICIAN },
-};
-
-const servicesBreadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.drzahidasadaf.com/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Services",
-      item: "https://www.drzahidasadaf.com/services",
-    },
-  ],
-};
-
 const serviceCards = [
   {
     title: "PCOS / PCOD Care",
@@ -74,6 +44,49 @@ const serviceCards = [
       "Rejuvenate digestion and immunity with cupping, therapeutic oil baths, breathwork, and advanced gut-healing nutrition.",
   },
 ];
+
+const servicesSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://www.drzahidasadaf.com/services/#webpage",
+  url: "https://www.drzahidasadaf.com/services",
+  name: "Holistic Services | Dr. Zahida Sadaf",
+  description: "A comprehensive list of Ayurvedic-Unani treatments for chronic wellness.",
+  isPartOf: { "@id": SCHEMA_IDS.WEBSITE },
+  mainEntity: serviceCards.map((card) => ({
+    "@type": "Service",
+    serviceType: card.title,
+    description: card.description,
+    provider: { "@id": SCHEMA_IDS.PHYSICIAN },
+    areaServed: [
+      { "@type": "Country", name: "India" },
+      { "@type": "Country", name: "Canada" },
+      { "@type": "Country", name: "United States" },
+      { "@type": "Country", name: "United Kingdom" },
+      { "@type": "Country", name: "Australia" },
+    ],
+  })),
+};
+
+const servicesBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.drzahidasadaf.com/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Services",
+      item: "https://www.drzahidasadaf.com/services",
+    },
+  ],
+};
+
 
 /**
  * Services page displaying treatment categories with quick links to book a consultation.
